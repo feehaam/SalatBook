@@ -8,8 +8,7 @@ namespace ApplicationLayer.Map
     {
         public MappintProfiles()
         {
-            CreateMap<StudentDto, Student>();
-            CreateMap<CourseDto, Course>();
+            CreateMap<UserDto, User>();
         }
     }
 }

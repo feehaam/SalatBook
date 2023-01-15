@@ -210,3 +210,8 @@ D:\Code\Team project\SalatBook\Back end\Application\obj\Debug\net6.0\scopedcss\b
 D:\Code\Team project\SalatBook\Back end\Application\obj\Debug\net6.0\ApplicationLayer.csproj.CopyComplete
 D:\Code\Team project\SalatBook\Back end\Application\obj\Debug\net6.0\ApplicationLayer.genruntimeconfig.cache
 D:\Code\Team project\SalatBook\Back end\Application\obj\Debug\net6.0\ref\ApplicationLayer.dll
+D:\Code\Team project\SalatBook\Back end\Application\obj\Debug\net6.0\staticwebassets\msbuild.ApplicationLayer.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Code\Team project\SalatBook\Back end\Application\obj\Debug\net6.0\staticwebassets\msbuild.build.ApplicationLayer.props
+D:\Code\Team project\SalatBook\Back end\Application\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ApplicationLayer.props
+D:\Code\Team project\SalatBook\Back end\Application\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.ApplicationLayer.props
+D:\Code\Team project\SalatBook\Back end\Application\obj\Debug\net6.0\staticwebassets.pack.json

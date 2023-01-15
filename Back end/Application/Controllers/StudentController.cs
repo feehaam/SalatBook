@@ -1,7 +1,7 @@
-﻿using DataAccessLayer.IRepository;
+﻿using DataAccessLayer.IRepo;
 using DataAccessLayer.Model;
 using Microsoft.AspNetCore.Mvc;
-
+/*
 namespace ApplicationLayer.Controllers
 {
     [Route("api/[controller]")]
@@ -79,3 +79,4 @@ namespace ApplicationLayer.Controllers
         }
     }
 }
+*/
