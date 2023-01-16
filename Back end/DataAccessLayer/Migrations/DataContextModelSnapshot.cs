@@ -31,23 +31,18 @@ namespace DataAccessLayer.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("email")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("fullName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("password")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<List<int>>("records")
-                        .IsRequired()
                         .HasColumnType("integer[]");
 
                     b.Property<string>("username")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");

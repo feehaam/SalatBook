@@ -8,71 +8,45 @@ namespace DataAccessLayer.Repository
 {
     public class UserRepo : IUser
     {
-        private readonly DataContext _context;
+        private readonly DataContext context;
         public UserRepo(DataContext context)
         {
-            _context = context;
+           this.context = context;
         }
         public bool CreateUser(User user)
         {
-            _context.Add(user);
+            context.Add(user);
             return Save();
         }
         public User ReadUser(int id)
         {
-            User user = _context.Users.Where(x => x.Id == id).First();
+            User user = context.Users.Single(x => x.Id == id);
             return user;
         }
-        public User FindUser(string emailOrUsername)
+        public int GetUserId(string emailOrUsername)
         {
-            User user = FindByEmail(emailOrUsername);
-            if(user == null)
-            {
-                user = FindByUsername(emailOrUsername);
-            }
-            if (user == null) return null;
-           return user;
-        }
-        private User FindByEmail(string email)
-        {
-            try
-            {
-                return _context.Users.Where(x => x.email.Equals(email)).ToList().ElementAt(0);
-            }
-            catch(Exception ex)
-            {
-                return null;
-            }
-        }
-        private User FindByUsername(string username)
-        {
-            try
-            {
-                return _context.Users.Where(x => x.username.Equals(username)).ToList().ElementAt(0);
-            }
-            catch(Exception ex)
-            {
-                return null;
-            }
+            if(emailOrUsername == null) { return -1; }
+            User user = context.Users.Single(x => x.username == emailOrUsername || x.email == emailOrUsername);
+            return user == null ? -1 : user.Id;
         }
         public bool UpdateUser(User user)
         {
-            _context.Update(user);
+            context.Update(user);
             return Save();
         }
         public bool DeleteUser(int id)
         {
             User user = ReadUser(id);
-            _context.Users.Remove(user);
+            context.Users.Remove(user);
             return Save();
         }
         public bool UserExists(int id)
         {
-            return _context.Users.Any(x => x.Id == id);
+            return context.Users.Any(x => x.Id == id);
         }
         public bool Save()
         {
-            var saved = _context.SaveChanges();
+            var saved = context.SaveChanges();
             return saved > 0 ? true : false;
         }
     }

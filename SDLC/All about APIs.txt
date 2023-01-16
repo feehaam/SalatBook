@@ -1,0 +1,18 @@
+Available API's
+----------------------------------------
+[User]
+-> create_user
+-> read_user{id}
+-> find_user{emailOrUsername}
+-> update_user
+-> delete_user
+
+[Namaj data] - contains namaj data of a user
+-> add_daily_list
+-> get_daily_list{date}
+-> update_daily_list
+-> delete_daily_list{date}
+-> get_full_list{userId}
+-> clear_full_list{userId}
+---------------------------------------
+

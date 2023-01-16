@@ -11,7 +11,7 @@ namespace DataAccessLayer.IRepo
     {
         public bool CreateUser(User user);
         public User ReadUser(int id);
-        public User FindUser(string emailOrUsername);
+        public int GetUserId(string emailOrUsername);
         public bool DeleteUser(int id);
         public bool UpdateUser(User user);
         public bool UserExists(int id);

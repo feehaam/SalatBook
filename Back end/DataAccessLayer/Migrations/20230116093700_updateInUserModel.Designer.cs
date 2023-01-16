@@ -12,8 +12,8 @@ using asingment.Model;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230115163544_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20230116093700_updateInUserModel")]
+    partial class updateInUserModel
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,23 +34,18 @@ namespace DataAccessLayer.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("email")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("fullName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("password")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<List<int>>("records")
-                        .IsRequired()
                         .HasColumnType("integer[]");
 
                     b.Property<string>("username")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");

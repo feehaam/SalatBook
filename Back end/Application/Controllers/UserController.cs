@@ -31,9 +31,9 @@ namespace ApplicationLayer.Controllers
                 return BadRequest("Error while creating new user! --> " + e.Message);
             }
         }
-        [HttpGet("/read_user{id}")]
+        [HttpGet("/read_user/{id}")]
         public IActionResult ReadUser(int id)
-        {
+        { 
             try
             {
                 if(!userDLL.UserExists(id))
@@ -49,21 +49,20 @@ namespace ApplicationLayer.Controllers
                 return NotFound("Error while seraching user! --> " + e.Message);
             }
         }
-        [HttpGet("/find_user{emailOrUserName}")]
+        [HttpGet("/find_user/{emailOrUsername}")]
         public IActionResult FindUser(string emailOrUsername)
         {
             try
             {
-                var user = userDLL.FindUser(emailOrUsername);
-                if (user == null) return BadRequest("Student doesn't exist, Or fail to parse!");
-                return Ok(user);
+                int userId = userDLL.GetUserId(emailOrUsername);
+                return Ok(userId);
             }
             catch (Exception e)
             {
                 return NotFound("Error while seraching user! --> " + e.Message);
             }
         }
-        [HttpPut("/update_user")]
+        [HttpPut("/update_user/")]
         public IActionResult UpdateUser(User user)
         {
             try
@@ -81,7 +80,7 @@ namespace ApplicationLayer.Controllers
             }
         }
         
-        [HttpDelete("/delete_user")]
+        [HttpDelete("/delete_user/")]
         public IActionResult DeleteUser(int id)
         {
             try
